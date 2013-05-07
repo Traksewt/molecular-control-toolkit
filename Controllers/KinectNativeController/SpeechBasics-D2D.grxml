@@ -1,0 +1,347 @@
+﻿<grammar version="1.0" xml:lang="en-US" root="rootRule" tag-format="semantics/1.0-literals" xmlns="http://www.w3.org/2001/06/grammar">
+  <rule id="rootRule">
+    <one-of>
+      <item>
+        <tag>RESET</tag>
+        <one-of>
+          <item> reset </item>
+          <item> start again </item>
+          <item> back to the start </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>LOAD</tag>
+        <one-of>
+          <item> load </item>
+          <item> import </item>
+        </one-of>
+      </item>
+      <item>
+        hands
+        <one-of>
+          <item>
+            <tag>HANDS_ON</tag>
+            on
+          </item>
+          <item>
+            <tag>HANDS_OFF</tag>
+            off
+          </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>SHOW</tag>
+        <one-of>
+          <item> show </item>
+          <item> display </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>WAKE_UP</tag>
+        <one-of>
+          <item> wake up </item>
+          <item> awake </item>
+          <item> start </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>GO_TO_SLEEP</tag>
+        <one-of>
+          <item> go to sleep </item>
+        </one-of>
+      </item>
+      <item>
+        color
+        <one-of>
+          <item>
+            <tag>COLOR_SEQUENCE_SIMILARITY</tag>
+            sequence similarity
+          </item>
+          <item>
+            <tag>COLOR_SECONDARY_STRUCTURE</tag>
+            secondary structure
+          </item>
+          <item>
+            <tag>COLOR_STRUCTURE</tag>
+            structure
+          </item>
+          <item>
+            <tag>COLOR_DISPLACEMENT</tag>
+            displacement
+          </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>ZOOM</tag>
+        <one-of>
+          <item> zoom </item>
+          <item> zoom in </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>SEARCH</tag>
+        <one-of>
+          <item> search </item>
+          <item> find </item> 
+          <item> go to </item>
+        </one-of>
+      </item>
+      <item>
+        select
+        <one-of>
+          <item><tag>SELECT_ALL</tag> all </item>
+          <item>
+            <tag>SELECT_UP</tag> up
+          </item>
+          <item><tag>SELECT_LIGAND</tag> ligand </item>
+          <item><tag>SELECT_LIGAND</tag> liggand </item>
+          <item>
+            <tag>SELECT_ALL_LIGANDS</tag> all ligands
+          </item>
+          <item><tag>SELECT_PROXIMITY</tag>proximity </item>
+          <item>
+            <tag>SELECT_RESIDUE</tag>
+            <one-of>
+              <item> residue </item>
+              <item> item </item>
+              <item> cursor </item>
+            </one-of>
+
+          </item>
+          <item>
+            <tag>SELECT_CHAIN</tag>chain
+          </item>
+          <item>
+            <tag>SELECT_SUB_CHAIN</tag>sub chain
+          </item>
+        </one-of>
+      </item>
+      <item>
+        next
+        <one-of>
+          <item>
+            <tag>SELECT_NEXT_LIGAND</tag> ligand
+          </item>
+          <item>
+            <tag>SELECT_NEXT_LIGAND</tag> liggand
+          </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>DESELECT</tag>
+        <one-of>
+          <item> deselect </item>
+          <item> deselect all </item>
+          <item> de select </item>
+          <item> unselect </item>
+          <item> un select </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>SPIN</tag>
+        <one-of>
+          <item> spin </item>
+          <item> rotate </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>STOP_SPIN</tag>
+        stop
+        <one-of>
+          <item> spin </item>
+          <item> rotate </item>
+          <item> spinning </item>
+          <item> rotating </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>SPIN_CRAZY</tag>
+        <one-of>
+          <item> go crazy </item>
+          <item> spin crazy </item>
+          <item> go nuts </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>COPY</tag>
+        copy
+      </item>
+      <item>
+        <tag>PASTE</tag>
+        paste
+      </item>
+    </one-of>
+  </rule>
+  <rule id="AminoAcids" scope="public">
+    <one-of>
+      <item>
+        <tag>A</tag>
+        <one-of>
+          <item> A </item>
+          <item> Alanine </item>
+          <item> Aee </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>R</tag>
+        <one-of>
+          <item> R </item>
+          <item> Arginine </item>
+          <item> Arrh </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>N</tag>
+        <one-of>
+          <item> N </item>
+          <item> Asparagine </item>
+          <item> Enn </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>D</tag>
+        <one-of>
+          <item> D </item>
+          <item> Aspartic acid </item>
+          <item> Dee </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>C</tag>
+        <one-of>
+          <item> C </item>
+          <item> Cysteine </item>
+          <item> See </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>E</tag>
+        <one-of>
+          <item> E </item>
+          <item> Glutamic acid </item>
+          <item> Eee </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>Q</tag>
+        <one-of>
+          <item> Q </item>
+          <item> Glutamine </item>
+          <item> Que </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>G</tag>
+        <one-of>
+          <item> G </item>
+          <item> Glycine </item>
+          <item> Gee </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>H</tag>
+        <one-of>
+          <item> H </item>
+          <item> Histidine </item>
+          <item> Ache </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>I</tag>
+        <one-of>
+          <item> I </item>
+          <item> Isoleucine </item>
+          <item> eye </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>L</tag>
+        <one-of>
+          <item> L </item>
+          <item> Leucine </item>
+          <item> Elle </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>K</tag>
+        <one-of>
+          <item> K </item>
+          <item> Lysine </item>
+          <item> Kay </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>M</tag>
+        <one-of>
+          <item> M </item>
+          <item> Methionine </item>
+          <item> Em </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>F</tag>
+        <one-of>
+          <item> F </item>
+          <item> Phenylalanine </item>
+          <item> Eff </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>P</tag>
+        <one-of>
+          <item> P </item>
+          <item> Proline </item>
+          <item> Pee </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>S</tag>
+        <one-of>
+          <item> S </item>
+          <item> Serine </item>
+          <item> Ess </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>T</tag>
+        <one-of>
+          <item> T </item>
+          <item> Threonine </item>
+          <item> Tee </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>W</tag>
+        <one-of>
+          <item> W </item>
+          <item> Tryptophan </item>
+          <item> Double u </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>Y</tag>
+        <one-of>
+          <item> Y </item>
+          <item> Tyrosine </item>
+          <item> Why </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>V</tag>
+        <one-of>
+          <item> V </item>
+          <item> Valine </item>
+          <item> Vee </item>
+        </one-of>
+      </item>
+      <item>
+        <tag>TEST</tag>
+        <one-of>
+          <item> Test </item>
+          <item> Joke </item>
+          <item> Help </item>
+        </one-of>
+      </item>
+    </one-of>
+  </rule>
+</grammar>

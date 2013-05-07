@@ -1,0 +1,9 @@
+ipch
+*.dsf
+*.suo
+Release
+Debug
+*.dll
+*.exp
+*.lib
+*.pdb
