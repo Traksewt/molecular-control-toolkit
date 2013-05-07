@@ -13,7 +13,7 @@ public enum ConnectorType {
 	
 	/**
 	 * Constructor
-	 * @param clazz
+	 * @param clazz the connector class
 	 */
 	private ConnectorType(Class< ? extends Connector> clazz) {
 		typeClass = clazz;
