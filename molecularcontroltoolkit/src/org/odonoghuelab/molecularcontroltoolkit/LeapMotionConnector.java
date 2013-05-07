@@ -136,7 +136,7 @@ public class LeapMotionConnector extends AbstractConnector {
     	        	lastX = -1;
 
 	        		Hand hand = frame.hands().frontmost();
-	        		float rotateProb = hand.rotationProbability(lastFrame);
+//	        		float rotateProb = hand.rotationProbability(lastFrame);
 	        		Vector translation = hand.translation(lastFrame);
 	        		getGestureDispatcher().triggerPan((int) translation.getX(), -(int) translation.getY());
 	        		getGestureDispatcher().triggerZoom((int) -translation.getZ());
@@ -158,8 +158,8 @@ public class LeapMotionConnector extends AbstractConnector {
 			    		float x = hit.getX();
 			    		float y = hit.getY();
 			    		
-			        	Pointable lastFinger = lastFrame.fingers().frontmost();
-			        	Vector lastHit = controller.locatedScreens().closestScreenHit(lastFinger).intersect(lastFinger,true);
+//			        	Pointable lastFinger = lastFrame.fingers().frontmost();
+//			        	Vector lastHit = controller.locatedScreens().closestScreenHit(lastFinger).intersect(lastFinger,true);
 			        	System.out.println(finger + ": hit, last hit, xy: " + hit.getX() + ", " + hit.getY() );
 			        	if (absZVel > 50 && lastY != -1) {
 			        		float scale = (float) 2500 / (absZVel*absZVel);
