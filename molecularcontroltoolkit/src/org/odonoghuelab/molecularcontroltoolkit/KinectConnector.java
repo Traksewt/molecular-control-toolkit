@@ -25,7 +25,10 @@ public class KinectConnector extends AbstractConnector {
 	private static KinectConnector instance = null;
 	
 	/** The X & Y rotation speed */
-	static final float ROTATION_SCALE = 0.15f;
+	static final float ROTATION_XY_SCALE = 0.15f;
+
+	/** The Z rotation speed */
+	static final float ROTATION_Z_SCALE = 1.15f;
 
 	@Override
 	public void shutdown() {
@@ -83,7 +86,7 @@ public class KinectConnector extends AbstractConnector {
 	 */
 	public static void triggerRotate(int rotateX, int rotateY, int rotateZ)
 	{
-		instance.getGestureDispatcher().triggerRotate((int) (rotateX * ROTATION_SCALE), (int)(rotateY * ROTATION_SCALE), rotateZ);
+		instance.getGestureDispatcher().triggerRotate((int) (rotateX * ROTATION_XY_SCALE), (int)(rotateY * ROTATION_XY_SCALE), (int)( rotateZ * ROTATION_Z_SCALE));
 	}
 	
 	/**
