@@ -1,0 +1,32 @@
+<project default="build">
+<!-- TODO SETUP BUILD CP LEAP MOTION -->
+	<property name="LEAP_SDK" value="/Users/kennethsabir/Leap/LeapSDK/"></property>
+    <target name="clean">
+        <delete dir="build"/>
+    </target>
+	
+	<target name="build"> 
+		<ant target="compile"/>
+		<ant target="jar"/>
+		<ant target="javadoc"/>
+	</target>
+
+    <target name="compile">
+        <mkdir dir="build/classes"/>
+        <javac srcdir="src" destdir="build/classes"  classpath="${LEAP_SDK}/lib/LeapJava.jar"/>
+    </target>
+
+    <target name="javadoc">
+        <delete dir="build/javadoc"/>
+        <mkdir dir="build/javadoc"/>
+        <javadoc sourcepath="src" excludepackagenames="org.odonoghuelab.molecularcontroltoolkit.internal" destdir="build/javadoc"  classpath="${LEAP_SDK}/lib/LeapJava.jar"/>
+    </target>
+
+	<target name="jar">
+        <mkdir dir="build/jar"/>
+        <jar destfile="build/jar/molecular-control-toolkit.jar" basedir="build/classes">
+        </jar>
+    </target>
+
+</project>
+
