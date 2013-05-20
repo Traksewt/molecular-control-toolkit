@@ -1,26 +1,26 @@
 package org.odonoghuelab.molecularcontroltoolkit.internal;
 
-import org.odonoghuelab.molecularcontroltoolkit.VoiceDispatcher;
+import org.odonoghuelab.molecularcontroltoolkit.VoiceListener;
 
 /**
  * VoiceDispatcher decorator to allow it to be enabled
  * @author KennySabir
  *
  */
-public class EnabledVoiceDispatcher implements VoiceDispatcher, Enabler {
+public class EnabledVoiceDispatcher implements VoiceListener, Enabler {
 
 	/** is voice enabled */
 	boolean voiceEnabled = true;
 	
-	/** the decorated dispatcher */
-	VoiceDispatcher dispatcher;
+	/** the decorated listener */
+	VoiceListener listener;
 
 	/**
 	 * Constructor sets up the dispatcher
 	 * @param dispatcher
 	 */
-	public EnabledVoiceDispatcher(VoiceDispatcher dispatcher) {
-		this.dispatcher = dispatcher;
+	public EnabledVoiceDispatcher(VoiceListener dispatcher) {
+		this.listener = dispatcher;
 	}
 
 	@Override
@@ -36,28 +36,28 @@ public class EnabledVoiceDispatcher implements VoiceDispatcher, Enabler {
 	@Override
 	public void color(String type) {
 		if (isEnabled()) {
-			dispatcher.color(type);
+			listener.color(type);
 		}
 	}
 
 	@Override
 	public void copy() {
 		if (isEnabled()) {
-			dispatcher.copy();
+			listener.copy();
 		}
 	}
 
 	@Override
 	public void paste() {
 		if (isEnabled()) {
-			dispatcher.paste();
+			listener.paste();
 		}
 	}
 
 	@Override
 	public void select(String value) {
 		if (isEnabled()) {
-			dispatcher.select(value);
+			listener.select(value);
 		}
 
 	}
@@ -65,14 +65,14 @@ public class EnabledVoiceDispatcher implements VoiceDispatcher, Enabler {
 	@Override
 	public void selectAll() {
 		if (isEnabled()) {
-			dispatcher.selectAll();
+			listener.selectAll();
 		}
 
 	}
 
 	public void spin(boolean goCrazy) {
 		if (isEnabled()) {
-			dispatcher.spin(goCrazy);
+			listener.spin(goCrazy);
 		}
 
 	};
@@ -80,21 +80,21 @@ public class EnabledVoiceDispatcher implements VoiceDispatcher, Enabler {
 	@Override
 	public void triggerSpeech(int speechEvent) {
 		if (isEnabled()) {
-			dispatcher.triggerSpeech(speechEvent);
+			listener.triggerSpeech(speechEvent);
 		}
 	}
 
 	@Override
 	public void reset() {
 		if (isEnabled()) {
-			dispatcher.reset();
+			listener.reset();
 		}
 	}
 
 	@Override
 	public void zoomToSelection() {
 		if (isEnabled()) {
-			dispatcher.zoomToSelection();
+			listener.zoomToSelection();
 		}
 
 	}
@@ -102,7 +102,7 @@ public class EnabledVoiceDispatcher implements VoiceDispatcher, Enabler {
 	@Override
 	public void search(char searchTerm) {
 		if (isEnabled()) {
-			dispatcher.search(searchTerm);
+			listener.search(searchTerm);
 		}
 	}
 

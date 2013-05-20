@@ -1,7 +1,5 @@
-package org.odonoghuelab.molecularcontroltoolkit;
+package org.odonoghuelab.molecularcontroltoolkit.internal;
 
-import org.odonoghuelab.molecularcontroltoolkit.internal.AbstractConnector;
-import org.odonoghuelab.molecularcontroltoolkit.internal.InteractiveType;
 
 /**
  * The Connector for the Kinect interface. Supports Gestures & Voice.

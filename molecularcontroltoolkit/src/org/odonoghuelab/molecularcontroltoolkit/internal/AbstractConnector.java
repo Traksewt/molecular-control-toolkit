@@ -1,6 +1,5 @@
 package org.odonoghuelab.molecularcontroltoolkit.internal;
 
-import org.odonoghuelab.molecularcontroltoolkit.Connector;
 
 /**
  * Helper abstract class to setup the dispatchers for a connector

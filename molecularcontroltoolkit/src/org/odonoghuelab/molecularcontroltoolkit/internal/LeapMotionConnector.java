@@ -1,4 +1,4 @@
-package org.odonoghuelab.molecularcontroltoolkit;
+package org.odonoghuelab.molecularcontroltoolkit.internal;
 /******************************************************************************\
 * Copyright (C) 2012-2013 Leap Motion, Inc. All rights reserved.               *
 * Leap Motion proprietary and confidential. Not for distribution.              *
@@ -11,8 +11,6 @@ import java.awt.IllegalComponentStateException;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import org.odonoghuelab.molecularcontroltoolkit.internal.AbstractConnector;
-import org.odonoghuelab.molecularcontroltoolkit.internal.InteractiveType;
 
 import com.leapmotion.leap.Controller;
 import com.leapmotion.leap.Frame;

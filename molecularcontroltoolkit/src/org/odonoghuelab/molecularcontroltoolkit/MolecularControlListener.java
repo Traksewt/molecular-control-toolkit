@@ -5,6 +5,6 @@ package org.odonoghuelab.molecularcontroltoolkit;
  * @author KennySabir
  *
  */
-public interface Dispatcher extends VoiceDispatcher, GestureDispatcher {
+public interface MolecularControlListener extends VoiceListener, GestureListener {
 
 }

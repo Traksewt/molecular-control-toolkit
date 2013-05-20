@@ -5,7 +5,7 @@ package org.odonoghuelab.molecularcontroltoolkit;
  * @author KennySabir
  *
  */
-public interface VoiceDispatcher {
+public interface VoiceListener {
 
 	/**
 	 * Zoom to selection

@@ -6,7 +6,7 @@ package org.odonoghuelab.molecularcontroltoolkit;
  * @author KennySabir
  *
  */
-public interface GestureDispatcher {
+public interface GestureListener {
 
 
 	/** 
@@ -28,7 +28,7 @@ public interface GestureDispatcher {
 	 * @param rotateY relative amount to rotate in Y 
  	 * @param rotateZ relative amount to rotate in Z 
 	 */
-	public abstract void triggerRotate(int x, int y, int z);
+	public abstract void triggerRotate(int rotateX, int rotateY, int rotateZ);
 
 	/**
 	 * Reset the view

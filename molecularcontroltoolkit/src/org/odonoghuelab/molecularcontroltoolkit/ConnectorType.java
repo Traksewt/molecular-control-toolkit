@@ -1,5 +1,9 @@
 package org.odonoghuelab.molecularcontroltoolkit;
 
+import org.odonoghuelab.molecularcontroltoolkit.internal.Connector;
+import org.odonoghuelab.molecularcontroltoolkit.internal.KinectConnector;
+import org.odonoghuelab.molecularcontroltoolkit.internal.LeapMotionConnector;
+
 /**
  * The enumeration for all possible connectors
  * @author KennySabir
@@ -25,7 +29,7 @@ public enum ConnectorType {
 	 * @throws InstantiationException
 	 * @throws IllegalAccessException
 	 */
-	public Connector newInstance() throws InstantiationException, IllegalAccessException {
+	protected Connector newInstance() throws InstantiationException, IllegalAccessException {
 		return typeClass.newInstance();
 	}
 }

@@ -1,33 +1,33 @@
 package org.odonoghuelab.molecularcontroltoolkit.internal;
 
-import org.odonoghuelab.molecularcontroltoolkit.GestureDispatcher;
+import org.odonoghuelab.molecularcontroltoolkit.GestureListener;
 
 /**
  * GestureDispatcher decorator to allow it to be enabled
  * @author KennySabir
  *
  */
-public class EnabledGestureDispatcher implements GestureDispatcher, Enabler{
+public class EnabledGestureDispatcher implements GestureListener, Enabler{
 
 	
 	/** is gestures enabled */
 	boolean handsEnabled = true;
 
-	/** the decorated dispatcher */
-	GestureDispatcher dispatcher;
+	/** the decorated listener */
+	GestureListener listener;
 	
 	/**
 	 * Constructor sets up the dispatcher
 	 * @param dispatcher
 	 */
-	public EnabledGestureDispatcher(GestureDispatcher dispatcher) {
-		this.dispatcher = dispatcher;
+	public EnabledGestureDispatcher(GestureListener dispatcher) {
+		this.listener = dispatcher;
 	}
 
 	@Override
 	public void triggerPan(int panX, int panY) {
 		if (handsEnabled)  {
-			dispatcher.triggerPan(panX, panY);
+			listener.triggerPan(panX, panY);
 		}
 
 	}
@@ -36,7 +36,7 @@ public class EnabledGestureDispatcher implements GestureDispatcher, Enabler{
 	public void triggerZoom(int zoom)
 	{
 		if (handsEnabled)  {
-			dispatcher.triggerZoom(zoom);
+			listener.triggerZoom(zoom);
 		}
 	}
 
@@ -44,7 +44,7 @@ public class EnabledGestureDispatcher implements GestureDispatcher, Enabler{
 	@Override
 	public void zoomToSelection() {
 		if (handsEnabled)  {
-			dispatcher.zoomToSelection();
+			listener.zoomToSelection();
 		}
 	}
 
@@ -64,21 +64,21 @@ public class EnabledGestureDispatcher implements GestureDispatcher, Enabler{
 	@Override
 	public void reset() {
 		if (handsEnabled)  {
-			dispatcher.reset();
+			listener.reset();
 		}
 	}
 
 	@Override
 	public void triggerRotate(int x, int y, int z) {
 		if (handsEnabled)  {
-			dispatcher.triggerRotate(x,y,z);
+			listener.triggerRotate(x,y,z);
 		}
 	}
 	
 	@Override
 	public void point(float x, float y) {
 		if (handsEnabled)  {
-			dispatcher.point(x,y);
+			listener.point(x,y);
 		}
 		
 	}
@@ -86,7 +86,7 @@ public class EnabledGestureDispatcher implements GestureDispatcher, Enabler{
 	@Override
 	public void selectMouseCursor() {
 		if (handsEnabled) {
-			dispatcher.selectMouseCursor();
+			listener.selectMouseCursor();
 		}
 	}
 

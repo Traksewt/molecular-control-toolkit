@@ -14,8 +14,7 @@ public interface Enabler {
 	void setEnable(boolean enabled);
 	
 	/**
-	 * return if enabled
-	 * @return
+	 * @return if enabled
 	 */
 	boolean isEnabled();
 }

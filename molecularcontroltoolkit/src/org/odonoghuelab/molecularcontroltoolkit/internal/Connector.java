@@ -1,8 +1,5 @@
-package org.odonoghuelab.molecularcontroltoolkit;
+package org.odonoghuelab.molecularcontroltoolkit.internal;
 
-import org.odonoghuelab.molecularcontroltoolkit.internal.EnabledGestureDispatcher;
-import org.odonoghuelab.molecularcontroltoolkit.internal.EnabledVoiceDispatcher;
-import org.odonoghuelab.molecularcontroltoolkit.internal.InteractiveType;
 
 /**
  * The interface all connectors must implement to handle the connector initialisation.
@@ -28,13 +25,13 @@ public interface Connector {
 
 	/**
 	 * Gets the enabled gesture dispatcher
-	 * @return
+	 * @return the gesture dispatcher
 	 */
 	public EnabledGestureDispatcher getGestureDispatcher();
 
 	/**
 	 * Gets the enabled voice dispatcher
-	 * @return
+	 * @return the voice dispatcher
 	 */
 	public EnabledVoiceDispatcher getVoiceDispatcher();
 	
