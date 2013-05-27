@@ -52,10 +52,15 @@ public class MolecularControlToolkit {
 	public void addConnector(ConnectorType type) {
 		try {
 			connectors.add(type.newInstance());
-		} catch (InstantiationException | IllegalAccessException e) {
+		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException  e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		
 	}
 
 	/**

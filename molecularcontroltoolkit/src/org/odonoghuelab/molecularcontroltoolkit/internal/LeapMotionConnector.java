@@ -158,7 +158,7 @@ public class LeapMotionConnector extends AbstractConnector {
 			    		
 //			        	Pointable lastFinger = lastFrame.fingers().frontmost();
 //			        	Vector lastHit = controller.locatedScreens().closestScreenHit(lastFinger).intersect(lastFinger,true);
-			        	System.out.println(finger + ": hit, last hit, xy: " + hit.getX() + ", " + hit.getY() );
+//			        	System.out.println(finger + ": hit, last hit, xy: " + hit.getX() + ", " + hit.getY() );
 			        	if (absZVel > 50 && lastY != -1) {
 			        		float scale = (float) 2500 / (absZVel*absZVel);
 				        	x = (hit.getX() - lastX) * scale + lastX;
