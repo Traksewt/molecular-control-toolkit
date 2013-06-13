@@ -10,7 +10,7 @@
 #include <guiddef.h>
 
 // Static initializers
-LPCWSTR CSpeechBasics::GrammarFileName = L"SpeechBasics-D2D.grxml";
+LPCWSTR CSpeechBasics::GrammarFileName = L"molecularcontrol-kinect.grxml";
 
 /// <summary>
 /// Constructor

@@ -57,7 +57,7 @@ public:
 	int					initialise();
     HWND                    m_hWnd;
     HINSTANCE               m_hInstance;
-
+	
     int MessageBoxResource(UINT nID, UINT nType);
     static DWORD WINAPI     Nui_ProcessThread(LPVOID pParam);
     DWORD WINAPI            Nui_ProcessThread();

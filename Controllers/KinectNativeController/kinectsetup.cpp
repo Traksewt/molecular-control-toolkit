@@ -30,9 +30,11 @@ SkeletalTracker *skeleton = NULL;
 INuiSensor * mNuiSensor = NULL;
 HANDLE m_hDepthStream = NULL;
 
+#define KINECT_CONTROLLER_CLASS "org/odonoghuelab/molecularcontroltoolkit/internal/KinectConnector" 
+
 //DEFINE_GUID(CLSID_ExpectedRecognizer, 0x495648e7, 0xf7ab, 0x4267, 0x8e, 0x0f, 0xca, 0xfb, 0x7a, 0x33, 0xc1, 0x60);
 
-JNIEXPORT void JNICALL Java_org_odonoghuelab_molecularcontroltoolkit_KinectConnector_deregisterKinect
+JNIEXPORT void JNICALL Java_org_odonoghuelab_molecularcontroltoolkit_internal_KinectConnector_deregisterKinect
   (JNIEnv * p_env, jobject p_obj) 
 {
 	if (skeleton != NULL)
@@ -63,6 +65,7 @@ DWORD WINAPI createObject(LPVOID pParam)
     }
 	  hr = mNuiSensor->NuiImageStreamOpen(
       NUI_IMAGE_TYPE_DEPTH_AND_PLAYER_INDEX,
+//	  NUI_IMAGE_RESOLUTION_320x240,
 	  NUI_IMAGE_RESOLUTION_640x480,
       NUI_IMAGE_STREAM_FLAG_ENABLE_NEAR_MODE,
       NUI_IMAGE_STREAM_FRAME_LIMIT_MAXIMUM,
@@ -80,7 +83,7 @@ DWORD WINAPI createObject(LPVOID pParam)
 	return 0;
 }
 
-JNIEXPORT void JNICALL Java_org_odonoghuelab_molecularcontroltoolkit_KinectConnector_registerKinect
+JNIEXPORT void JNICALL Java_org_odonoghuelab_molecularcontroltoolkit_internal_KinectConnector_registerKinect
   (JNIEnv * p_env, jobject p_obj) 
 {
 	INuiSensor * pNuiSensor;
@@ -131,7 +134,7 @@ JNIEXPORT void JNICALL Java_org_odonoghuelab_molecularcontroltoolkit_KinectConne
 			jclass cls;
 			fprintf(stderr, "got JVM3");
 
-			cls = p_env->FindClass("org/odonoghuelab/molecularcontroltoolkit/KinectConnector");
+			cls = p_env->FindClass(KINECT_CONTROLLER_CLASS);
 			if(cls == NULL){
 				OutputDebugString( L"cannot find class KinectConnector\n") ;
 				fprintf(stderr, "cannot find class KinectConnector\n") ;
@@ -254,7 +257,7 @@ void enableHands(bool enabled)
 	jvm->AttachCurrentThread((void **)&env, NULL);
 	jclass cls;
 
-	cls = env->FindClass("org/odonoghuelab/molecularcontroltoolkit/KinectConnector");
+	cls = env->FindClass(KINECT_CONTROLLER_CLASS);
 	if(cls == NULL){
 		OutputDebugString( L"cannot find class KinectConnector\n") ;
 		printf( "cannot find class KinectConnector\n") ;
@@ -272,7 +275,7 @@ void zoomNow(int zoom)
 	jvm->AttachCurrentThread((void **)&env, NULL);
 	jclass cls;
 
-	cls = env->FindClass("org/odonoghuelab/molecularcontroltoolkit/KinectConnector");
+	cls = env->FindClass(KINECT_CONTROLLER_CLASS);
 	if(cls == NULL){
 		OutputDebugString( L"cannot find class KinectConnector\n") ;
 		printf( "cannot find class KinectConnector\n") ;
@@ -291,7 +294,7 @@ void rotateNow(int rotateX, int rotateY, int rotateZ)
 	jclass cls;
 //	printf("rotating now %i \n \ r", rotate);
 
-	cls = env->FindClass("org/odonoghuelab/molecularcontroltoolkit/KinectConnector");
+	cls = env->FindClass(KINECT_CONTROLLER_CLASS);
 	if(cls == NULL){
 		OutputDebugString( L"cannot find class KinectConnector\n") ;
 		printf( "cannot find class KinectConnector\n") ;
@@ -310,7 +313,7 @@ void panNow(int x, int y)
 	jvm->AttachCurrentThread((void **)&env, NULL);
 	jclass cls;
 
-		cls = env->FindClass("org/odonoghuelab/molecularcontroltoolkit/KinectConnector");
+		cls = env->FindClass(KINECT_CONTROLLER_CLASS);
 	if(cls == NULL){
 		OutputDebugString( L"cannot find class KinectConnector\n") ;
 		printf( "cannot find class KinectConnector\n") ;
@@ -326,7 +329,7 @@ void point(float x, float y)
 	jvm->AttachCurrentThread((void **)&env, NULL);
 	jclass cls;
 
-	cls = env->FindClass("org/odonoghuelab/molecularcontroltoolkit/KinectConnector");
+	cls = env->FindClass(KINECT_CONTROLLER_CLASS);
 	if(cls == NULL){
 		OutputDebugString( L"cannot find class KinectConnector\n") ;
 		printf( "cannot find class KinectConnector\n") ;
@@ -345,7 +348,7 @@ void processSpeechSearch(LPCWSTR searchTerm)
 	jvm->AttachCurrentThread((void **)&env, NULL);
 	jclass cls;
 
-		cls = env->FindClass("org/odonoghuelab/molecularcontroltoolkit/KinectConnector");
+		cls = env->FindClass(KINECT_CONTROLLER_CLASS);
 	if(cls == NULL){
 		OutputDebugString( L"cannot find class KinectConnector\n") ;
 		printf( "cannot find class KinectConnector\n") ;
@@ -361,7 +364,7 @@ void processSpeech(AquariaAction action)
 	jclass cls;
 //	printf("rotating now %i \n \ r", rotate);
 
-	cls = env->FindClass("org/odonoghuelab/molecularcontroltoolkit/KinectConnector");
+	cls = env->FindClass(KINECT_CONTROLLER_CLASS);
 	if(cls == NULL){
 		OutputDebugString( L"cannot find class KinectConnector\n") ;
 		printf( "cannot find class KinectConnector\n") ;
