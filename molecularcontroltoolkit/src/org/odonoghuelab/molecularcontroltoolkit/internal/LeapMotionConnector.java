@@ -166,7 +166,9 @@ public class LeapMotionConnector extends AbstractConnector {
 			        	}
 			        	lastY = y;
 			        	lastX = x;
-			        	getGestureDispatcher().point(x, y);
+			        	if (!Float.isNaN(x) && !Float.isNaN(y)) {
+				        	getGestureDispatcher().point(x, y);
+			        	}
 		        	}
 		        	catch (IllegalComponentStateException e) {
 		        		e.printStackTrace();
