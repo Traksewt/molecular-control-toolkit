@@ -49,6 +49,7 @@
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -82,13 +83,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <IncludePath>$(ProgramFiles)\Microsoft SDKs\Speech\v11.0\Include;C:\Program Files (x86)\Windows Kits\8.0\Include\um;C:\Program Files (x86)\Windows Kits\8.0\Include\shared;$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSdkDir)include;$(FrameworkSDKDir)\include;$(KINECTSDK10_DIR)\inc;C:\Program Files\Java\jdk1.7.0_07\include;C:\Program Files\Java\jdk1.7.0_07\include\win32;$(KINECT_TOOLKIT_DIR)\inc</IncludePath>
-    <LibraryPath>$(ProgramFiles)\Microsoft SDKs\Speech\v11.0\Lib;C:\Program Files (x86)\Windows Kits\8.0\Lib\win8\um\x86;$(VCInstallDir)lib;$(VCInstallDir)atlmfc\lib;$(WindowsSdkDir)lib;$(FrameworkSDKDir)\lib;$(KINECTSDK10_DIR)\lib\x86;C:\Program Files\Java\jdk1.7.0_07\lib;$(KINECT_TOOLKIT_DIR)\lib\x86</LibraryPath>
+    <LibraryPath>$(Program Files)\Microsoft SDKs\Speech\v11.0\Lib;$(ProgramFiles)\Microsoft SDKs\Speech\v11.0\Lib;C:\Program Files (x86)\Windows Kits\8.0\Lib\win8\um\x86;$(VCInstallDir)lib;$(VCInstallDir)atlmfc\lib;$(WindowsSdkDir)lib;$(FrameworkSDKDir)\lib;$(KINECTSDK10_DIR)\lib\x86;C:\Program Files\Java\jdk1.7.0_07\lib;$(KINECT_TOOLKIT_DIR)\lib\x86</LibraryPath>
     <PostBuildEventUseInBuild>false</PostBuildEventUseInBuild>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSdkDir)include;$(FrameworkSDKDir)\include;;$(KINECTSDK10_DIR)\inc;J:\Program Files\Java\jdk1.7.0_03\include;J:\Program Files\Java\jdk1.7.0_03\include\win32</IncludePath>
-    <LibraryPath>$(VCInstallDir)lib\amd64;$(VCInstallDir)atlmfc\lib\amd64;$(WindowsSdkDir)lib\x64;;$(KINECTSDK10_DIR)\lib\amd64;J:\Program Files\Java\jdk1.7.0_03\lib</LibraryPath>
+    <IncludePath>$(ProgramFiles)\Microsoft SDKs\Speech\v11.0\Include;$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSdkDir)include;$(FrameworkSDKDir)\include;$(KINECTSDK10_DIR)\inc;C:\Program Files\Java\jdk1.7.0_07\include;C:\Program Files\Java\jdk1.7.0_07\include\win32;C:\Program Files (x86)\Windows Kits\8.0\Include\um;C:\Program Files (x86)\Windows Kits\8.0\Include\shared;</IncludePath>
+    <LibraryPath>$(ProgramFiles)\Microsoft SDKs\Speech\v11.0\Lib;C:\Program Files (x86)\Windows Kits\8.0\Lib\win8\um\x64;$(VCInstallDir)lib\amd64;$(VCInstallDir)atlmfc\lib\amd64;$(WindowsSdkDir)lib\x64;$(FrameworkSDKDir)\lib;$(KINECTSDK10_DIR)\lib\amd64;C:\Program Files\Java\jdk1.7.0_07\lib;$(KINECT_TOOLKIT_DIR)\lib\amd64</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -148,7 +149,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>Msdmo.lib;dmoguids.lib;amstrmid.lib;avrt.lib;kernel32.lib;user32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;Kinect10.lib;%(AdditionalDependencies);KinectInteraction170_32.lib</AdditionalDependencies>
+      <AdditionalDependencies>sapi.lib;Msdmo.lib;dmoguids.lib;amstrmid.lib;avrt.lib;kernel32.lib;user32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;Kinect10.lib;%(AdditionalDependencies);KinectInteraction170_32.lib</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>
@@ -173,7 +174,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;Kinect10.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Msdmo.lib;dmoguids.lib;amstrmid.lib;avrt.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;Kinect10.lib;KinectInteraction170_64.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>
@@ -181,7 +182,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <Xml Include="SpeechBasics-D2D.grxml">
+    <Xml Include="molecularcontrol-kinect.grxml">
       <FileType>Document</FileType>
       <SubType>Designer</SubType>
     </Xml>
@@ -189,6 +190,7 @@
   <ItemGroup>
     <ClInclude Include="ArmPosition.h" />
     <ClInclude Include="KinectAudioStream.h" />
+    <ClInclude Include="kinectsetup.h.old" />
     <ClInclude Include="kinectsetup.h" />
     <ClInclude Include="SkeletalTracker.h" />
     <ClInclude Include="SpeechBasics.h" />

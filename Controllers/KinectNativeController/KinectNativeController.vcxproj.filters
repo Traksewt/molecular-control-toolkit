@@ -21,9 +21,6 @@
     <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="kinectsetup.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="KinectAudioStream.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -37,6 +34,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SkeletalTracker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="kinectsetup.h.old">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="kinectsetup.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -67,7 +70,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Xml Include="SpeechBasics-D2D.grxml">
+    <Xml Include="molecularcontrol-kinect.grxml">
       <Filter>Resource Files</Filter>
     </Xml>
   </ItemGroup>
