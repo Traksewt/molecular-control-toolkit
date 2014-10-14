@@ -24,3 +24,34 @@ You can find a demo of the Molecular Control Toolkit at http://aquaria.ws
 Javadoc
 -------
 The javadoc is within the repository and also on the web at http://aquaria.ws/mct/javadoc
+
+Code example
+------------
+// initialise the toolkit
+        MolecularControlToolkit molecularControlToolkit = new MolecularControlToolkit();
+       
+        if (type.equalsIgnoreCase("kinect")){
+        	molecularControlToolkit.addConnector(ConnectorType.Kinect);
+        }
+        if (type.equalsIgnoreCase("leap")){
+        	molecularControlToolkit.addConnector(ConnectorType.LeapMotion);
+        }
+        else {
+        	System.out.println("Adding nothing");
+        }
+        
+        MyDispatcher dispatcher = new MyDispatcher();
+        molecularControlToolkit.setListeners(dispatcher);
+....
+
+public class MyDispatcher implements MolecularControlListener {
+…
+	//Here is an example of one of the callbacks
+	public void triggerRotate(int rotateX, int rotateY, int rotateZ) {
+		if (rotateBehaviour != null)
+		{
+			rotateBehaviour.processStimulus(rotateX, rotateY, rotateZ);
+		}
+	}
+}
+
