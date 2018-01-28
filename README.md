@@ -17,10 +17,6 @@ Kinect: the Kinect SDK and Developer Toolkit
 Leap Motion: the Leap Motion SDK
 (http://developer.leapmotion.com)
 
-DEMO
-----
-You can find a demo of the Molecular Control Toolkit at http://aquaria.ws
-
 Javadoc
 -------
 The javadoc is within the repository and also on the web at http://aquaria.ws/mct/javadoc
