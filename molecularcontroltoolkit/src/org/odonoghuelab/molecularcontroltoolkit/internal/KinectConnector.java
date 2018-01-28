@@ -84,7 +84,7 @@ public class KinectConnector extends AbstractConnector {
 	 */
 	public static void triggerRotate(int rotateX, int rotateY, int rotateZ)
 	{
-		instance.getGestureDispatcher().triggerRotate((int) (rotateX * ROTATION_XY_SCALE), (int)(rotateY * ROTATION_XY_SCALE), (int)( rotateZ * ROTATION_Z_SCALE));
+		instance.getGestureDispatcher().triggerRotate((rotateX * ROTATION_XY_SCALE), (rotateY * ROTATION_XY_SCALE), ( rotateZ * ROTATION_Z_SCALE));
 	}
 	
 	/**

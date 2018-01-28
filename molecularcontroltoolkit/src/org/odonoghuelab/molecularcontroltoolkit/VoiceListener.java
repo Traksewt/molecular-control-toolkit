@@ -14,7 +14,7 @@ public interface VoiceListener {
 
 	/**
 	 * Speech event occurred, currently NOT USED.
-	 * @param speechEvent
+	 * @param speechEvent the speech event
 	 */
 	public abstract void triggerSpeech(int speechEvent);
 
@@ -25,7 +25,7 @@ public interface VoiceListener {
 
 	/**
 	 * Search for a term
-	 * @param searchTerm
+	 * @param searchTerm the search term
 	 */
 	public abstract void search(char searchTerm);
 
@@ -58,7 +58,7 @@ public interface VoiceListener {
 
 	/**
 	 * Select a specific target
-	 * @param value
+	 * @param value the server to select
 	 */
 	public abstract void select(String value);
 

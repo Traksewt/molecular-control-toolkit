@@ -1,12 +1,15 @@
 package org.odonoghuelab.molecularcontroltoolkit.internal;
 
+import org.odonoghuelab.molecularcontroltoolkit.Connector;
+
+
 
 /**
  * The interface all connectors must implement to handle the connector initialisation.
  * @author KennySabir
  *
  */
-public interface Connector {
+public interface ConnectorInternal extends Connector{
 
 	/** handle the connector setup */
 	public void setup();

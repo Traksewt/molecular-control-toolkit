@@ -25,7 +25,7 @@ public class EnabledGestureDispatcher implements GestureListener, Enabler{
 	}
 
 	@Override
-	public void triggerPan(int panX, int panY) {
+	public void triggerPan(float panX, float panY) {
 		if (handsEnabled)  {
 			listener.triggerPan(panX, panY);
 		}
@@ -33,7 +33,7 @@ public class EnabledGestureDispatcher implements GestureListener, Enabler{
 	}
 
 	@Override
-	public void triggerZoom(int zoom)
+	public void triggerZoom(float zoom)
 	{
 		if (handsEnabled)  {
 			listener.triggerZoom(zoom);
@@ -69,7 +69,7 @@ public class EnabledGestureDispatcher implements GestureListener, Enabler{
 	}
 
 	@Override
-	public void triggerRotate(int x, int y, int z) {
+	public void triggerRotate(float x, float y, float z) {
 		if (handsEnabled)  {
 			listener.triggerRotate(x,y,z);
 		}

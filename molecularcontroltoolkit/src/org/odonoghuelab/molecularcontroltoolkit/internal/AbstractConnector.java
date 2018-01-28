@@ -1,12 +1,13 @@
 package org.odonoghuelab.molecularcontroltoolkit.internal;
 
 
+
 /**
  * Helper abstract class to setup the dispatchers for a connector
  * @author KennySabir
  *
  */
-public abstract class AbstractConnector implements Connector {
+public abstract class AbstractConnector implements ConnectorInternal {
 	
 	
 	/** The gesture dispatcher */

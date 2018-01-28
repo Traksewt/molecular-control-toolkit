@@ -3,15 +3,15 @@ package org.odonoghuelab.molecularcontroltoolkit;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.odonoghuelab.molecularcontroltoolkit.internal.Connector;
+import org.odonoghuelab.molecularcontroltoolkit.internal.ConnectorInternal;
 import org.odonoghuelab.molecularcontroltoolkit.internal.EnabledGestureDispatcher;
 import org.odonoghuelab.molecularcontroltoolkit.internal.EnabledVoiceDispatcher;
 import org.odonoghuelab.molecularcontroltoolkit.internal.InteractiveType;
 
 /**
  * The main entry point for the Molecular Control Toolkit. Connectors can be registered here.
- * Currently supports LeapMotion & Kinect.
- * Allows for application specific dispatchers to be registered. Supports Gesture & Voice Dispatchers
+ * Currently supports LeapMotion and Kinect.
+ * Allows for application specific dispatchers to be registered. Supports Gesture and Voice Dispatchers
  * 
  * @author KennySabir
  *
@@ -25,12 +25,12 @@ public class MolecularControlToolkit {
 	EnabledVoiceDispatcher voiceDispatcher;
 	
 	/** The list of enabled connectors  */
-	List<Connector> connectors = new ArrayList<Connector>();
+	List<ConnectorInternal> connectors = new ArrayList<ConnectorInternal>();
 	
 	/**
 	 * Sets the listeners
-	 * @param gestureListener
-	 * @param voiceListener
+	 * @param gestureListener the gesture listener
+	 * @param voiceListener the voice listener
 	 */
 	public void setListeners(GestureListener gestureListener, VoiceListener voiceListener) {
 		this.gestureDispatcher = new EnabledGestureDispatcher(gestureListener);
@@ -45,13 +45,17 @@ public class MolecularControlToolkit {
 	public void setListeners(MolecularControlListener listener) {
 		setListeners(listener, listener);
 	}
+
 	/**
 	 * Creates and adds a connector of the given ConnectorType
 	 * @param type the type to create
+	 * @return the new connector interface
 	 */
-	public void addConnector(ConnectorType type) {
+	public Connector addConnector(ConnectorType type) {
+		ConnectorInternal connector = null;
 		try {
-			connectors.add(type.newInstance());
+			connector = type.newInstance();
+			connectors.add(connector);
 		} catch (InstantiationException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -59,15 +63,14 @@ public class MolecularControlToolkit {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
+		return connector;
 	}
 
 	/**
 	 * initialise all the connectors
 	 */
 	public void initialise() {
-		for (Connector connector : connectors) {
+		for (ConnectorInternal connector : connectors) {
 			if (connector.supports(InteractiveType.VOICE)) {
 				connector.setVoiceDispatcher(voiceDispatcher);
 			}
